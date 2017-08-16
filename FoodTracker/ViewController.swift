@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,12 +76,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // present imagePickerController
         present(imagePickerController, animated: true, completion: nil)
     }
-    
-    @IBAction func setDefualtLabelText(_ sender: UIButton) {
-        mealNameLabel.text = "Defuat Text"
-        nameTextField.text = nil
-    }
-    
-    
 }
 
