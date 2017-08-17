@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
     
-    // MARK: Properties
+    // MARK: - Properties
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
         didSet {
             setupButtons()
@@ -29,7 +29,7 @@ import UIKit
         }
     }
     
-    // MARK: Initialzation
+    // MARK: - Initialzation
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButtons()
@@ -40,7 +40,7 @@ import UIKit
         setupButtons()
     }
     
-    // MARK: Button Action
+    // MARK: - Button Action
     @objc func ratingButtonTapped(button: UIButton) {
         
         guard let index = ratingButtons.index(of: button) else {
@@ -60,7 +60,7 @@ import UIKit
         
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     private func setupButtons() {
         
         // Clear any existing buttons
