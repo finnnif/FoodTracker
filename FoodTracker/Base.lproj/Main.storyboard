@@ -27,27 +27,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-Mx-0qh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-Mx-0qh">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Jf2-Mx-0qh" secondAttribute="height" multiplier="1:1" id="6LX-Hm-tHq"/>
+                                                <constraint firstAttribute="width" constant="90" id="U3g-Qm-6pe"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTd-kF-deK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTd-kF-deK">
                                             <rect key="frame" x="98" y="12" width="269" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8N6-oG-gSZ" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="38" width="252" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8N6-oG-gSZ" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="49.5" width="142" height="22"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="starSize">
+                                                    <size key="value" width="22" height="22"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wTd-kF-deK" firstAttribute="trailing" secondItem="gse-7c-hHo" secondAttribute="trailingMargin" id="AUm-8H-iu1"/>
+                                        <constraint firstItem="wTd-kF-deK" firstAttribute="leading" secondItem="Jf2-Mx-0qh" secondAttribute="trailing" constant="8" id="AdK-Mg-za0"/>
+                                        <constraint firstItem="wTd-kF-deK" firstAttribute="top" secondItem="gse-7c-hHo" secondAttribute="topMargin" constant="4" id="IGQ-xs-sGz"/>
+                                        <constraint firstItem="Jf2-Mx-0qh" firstAttribute="top" secondItem="gse-7c-hHo" secondAttribute="top" id="JXT-i0-vDA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8N6-oG-gSZ" secondAttribute="bottom" constant="10" id="Xui-K4-ViJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="Jf2-Mx-0qh" secondAttribute="bottom" id="wMl-u8-hLJ"/>
+                                        <constraint firstItem="8N6-oG-gSZ" firstAttribute="leading" secondItem="wTd-kF-deK" secondAttribute="leading" id="yPa-2J-wd9"/>
+                                        <constraint firstItem="Jf2-Mx-0qh" firstAttribute="leading" secondItem="gse-7c-hHo" secondAttribute="leading" id="za1-Ro-8D7"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="wTd-kF-deK" id="n26-GL-9Zf"/>
                                     <outlet property="photoImageView" destination="Jf2-Mx-0qh" id="X8X-m1-gt3"/>
                                     <outlet property="ratingControl" destination="8N6-oG-gSZ" id="9R0-GG-PvW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="GGD-Xj-mZx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,14 +76,14 @@
                     <navigationItem key="navigationItem" title="Your Meals" id="0jB-Zt-VQG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Fg-ud-zOd">
                             <connections>
-                                <segue destination="PCa-Ya-PBs" kind="presentation" id="tzQ-bd-C8P"/>
+                                <segue destination="PCa-Ya-PBs" kind="presentation" identifier="AddItem" id="tzQ-bd-C8P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtp-LS-d2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="110"/>
+            <point key="canvasLocation" x="-31.199999999999999" y="109.29535232383809"/>
         </scene>
         <!--New Meal-->
         <scene sceneID="tne-QT-ifu">
@@ -179,10 +196,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pE-EU-lya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="110"/>
+            <point key="canvasLocation" x="836" y="492"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultphoto" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GGD-Xj-mZx"/>
+    </inferredMetricsTieBreakers>
 </document>
