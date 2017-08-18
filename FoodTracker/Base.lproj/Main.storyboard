@@ -30,7 +30,6 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-Mx-0qh">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="Jf2-Mx-0qh" secondAttribute="height" multiplier="1:1" id="6LX-Hm-tHq"/>
                                                 <constraint firstAttribute="width" constant="90" id="U3g-Qm-6pe"/>
                                             </constraints>
                                         </imageView>
@@ -41,7 +40,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8N6-oG-gSZ" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="49.5" width="142" height="22"/>
+                                            <rect key="frame" x="98" y="44.5" width="142" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="142" id="LFD-ri-oxV"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                     <size key="value" width="22" height="22"/>
@@ -54,7 +56,7 @@
                                         <constraint firstItem="wTd-kF-deK" firstAttribute="leading" secondItem="Jf2-Mx-0qh" secondAttribute="trailing" constant="8" id="AdK-Mg-za0"/>
                                         <constraint firstItem="wTd-kF-deK" firstAttribute="top" secondItem="gse-7c-hHo" secondAttribute="topMargin" constant="4" id="IGQ-xs-sGz"/>
                                         <constraint firstItem="Jf2-Mx-0qh" firstAttribute="top" secondItem="gse-7c-hHo" secondAttribute="top" id="JXT-i0-vDA"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="8N6-oG-gSZ" secondAttribute="bottom" constant="10" id="Xui-K4-ViJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8N6-oG-gSZ" secondAttribute="bottom" constant="15" id="Xui-K4-ViJ"/>
                                         <constraint firstAttribute="bottom" secondItem="Jf2-Mx-0qh" secondAttribute="bottom" id="wMl-u8-hLJ"/>
                                         <constraint firstItem="8N6-oG-gSZ" firstAttribute="leading" secondItem="wTd-kF-deK" secondAttribute="leading" id="yPa-2J-wd9"/>
                                         <constraint firstItem="Jf2-Mx-0qh" firstAttribute="leading" secondItem="gse-7c-hHo" secondAttribute="leading" id="za1-Ro-8D7"/>
